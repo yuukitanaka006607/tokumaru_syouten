@@ -2,7 +2,7 @@
 
 class Public::SessionsController < Devise::SessionsController
   before_action :customer_state, only: [:create]
-  ef after_sign_in_path_for(resource)
+  def after_sign_in_path_for(resouce)
     root_path
   end
 
