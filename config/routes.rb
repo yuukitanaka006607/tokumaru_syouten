@@ -15,5 +15,12 @@ scope module: :public do
   get "customers/check" => "customers#check"
   patch "customers/withdrawal" => "customers#withdrawal"
 end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  namespace :admin do
+    get "genres" => "genres#index"
+    resources :genres, only: [:new, :create, :show, :edit, :update]
+    get "/" => "homes#top"
+  end
+
 end
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
