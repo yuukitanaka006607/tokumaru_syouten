@@ -21,7 +21,7 @@ end
     resources :genres, only: [:new, :create, :show, :edit, :update]
     get "/" => "homes#top"
     post "items" => "items#create"
-    resources :items, only: [:new]
+    resources :items, only: [:new, :show]
   end
 
 end

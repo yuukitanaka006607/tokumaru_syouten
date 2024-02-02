@@ -1,0 +1,5 @@
+<%= image_tag @item.get_image(300,300) %>
+<p>商品名<%= @item.name %></p>
+<p>ジャンル<%= @item.genre_id.name %></p>
+<p>商品説明<%= @item.introduction %></p>
+<p>税込価格（税抜価格）<%= rounded_price(@item.price*1.1) %> (<%= @item.price %>円)</p>
