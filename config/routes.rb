@@ -20,8 +20,8 @@ end
     get "genres" => "genres#index"
     resources :genres, only: [:new, :create, :show, :edit, :update]
     get "/" => "homes#top"
-    post "items" => "items#create"
-    resources :items, only: [:new, :show]
+    #post "items" => "items#create"
+    resources :items, only: [:new, :show,:create]
   end
 
 end
