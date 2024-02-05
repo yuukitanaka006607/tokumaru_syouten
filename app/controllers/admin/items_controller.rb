@@ -15,6 +15,10 @@ class Admin::ItemsController < ApplicationController
      @item = Item.find(params[:id])
    end
 
+   def index
+     @items = Item.all
+   end
+
    private
 
    def item_params

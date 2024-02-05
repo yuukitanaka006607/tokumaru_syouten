@@ -1,0 +1,18 @@
+<h1>商品一覧<%= link_to "商品新規登録", new_admin_item_path, class:"btn btn-primary" %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+    </tr>
+  </thead>
+  <% @items.each do |item| %>
+  <tr>
+    <td><%= item.id %></td>
+    <td><%= link_to item.name, admin_item_path(item.id) %></td>
+    <td><%= item.genre.name %></td>
+  </tr>
+  <% end %>
+</table>
