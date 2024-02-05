@@ -21,7 +21,7 @@ end
     resources :genres, only: [:new, :create, :show, :edit, :update]
     get "/" => "homes#top"
     get "items" => "items#index"
-    resources :items, only: [:new, :show,:create]
+    resources :items, only: [:new, :show,:create, :edit, :update]
   end
 
 end
