@@ -1,1 +1,7 @@
-<h1>public/top</h1>
+<h1>商品一覧 全<%= @items.count %>件</h1>
+<% @items.each do |item| %>
+<%= image_tag item.get_image(200,200) %><br>
+<%= link_to item.name, item_path(item.id) %><br>
+<%= item.genre.name %>
+<p><%= item.with_tax_price %>円</p>
+<% end %>

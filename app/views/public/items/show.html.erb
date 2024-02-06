@@ -1,0 +1,6 @@
+<h1>商品詳細</h1>
+<%= image_tag @item.get_image(300,300) %><br>
+<%= @item.name %><br>
+<%= @item.genre.name %><br>
+<%= @item.introduction %>
+<p><%= @item.with_tax_price %>円(税込)</p>
