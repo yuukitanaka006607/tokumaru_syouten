@@ -1,0 +1,17 @@
+<h1><%= @customer.full_name %>様の会員詳細</h1>
+<p>会員ID <%= @customer.id %></p>
+<p>会員氏名 <%= @customer.last_name %> <%= @customer.first_name %></p>
+<p>フリガナ <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></p>
+<p>生年月日 <%= @customer.birthday.strftime('%Y年%m月%d日') %></p>
+<p>年齢 <%= (Date.today.strftime('%Y%m%d').to_i - @customer.birthday.strftime('%Y%m%d').to_i)/10000 %>歳</p>
+<p>郵便番号 <%= @customer.postal_code %></p>
+<p>住所 <%= @customer.address %></p>
+<p>電話番号 <%= @customer.telephone_number %></p>
+<p>メールアドレス <%= @customer.email %></p>
+<p>会員状態
+<% if @customer.is_active %>
+ <p class="text-success">有効</p>
+<% elsif %>
+ <p class="text-meted">退会</p>
+<% end %></p>
+<p>最終ログイン <%= @customer.current_sign_in_at %></p>
