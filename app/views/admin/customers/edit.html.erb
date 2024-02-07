@@ -6,5 +6,29 @@
     氏名  <%= f.text_field :last_name, autofocus: true, id:"inputLastName" %>
           <%= f.text_field :first_name, autofocus: true, id:"inputFirstName"%>
  </div>
- 
+ <div class="input-group m-3 ">
+   フリガナ <%= f.text_field :last_name_kana, autofocus: true, id:"inputLastNameKana" %>
+            <%= f.text_field :first_name_kana, autofocus:true, id:"inputFirstNameKana" %>
+ </div>
+ <p>生年月日 <%= f.date_select :birthday, {start_year:1950, end_year:2020,
+              include_blank: true, use_two_digit_numbers: true}, class:"btn btn" %></p>
+
+  <p>郵便番号 <%= f.text_field :postal_code, autofocus: true, id:"inputPostalCode" %></p>
+
+  <p>住所 <%= f.text_field :address, autofocus: true, id:"inputAddress" %></p>
+
+  <p>電話番号 <%= f.text_field :telephone_number, autofocus: true, id:"inputTelephoneNumber" %></p>
+
+  <p>メールアドレス <%= f.email_field :email, autofocus: true, id:"inputEmail" %></p>
+
+  <p><div>
+    <%= f.radio_button :is_active, true, cheched:@customer.is_active == true, id: 'status-active' %>
+    <%= f.label :is_active, '有効', for: 'status-active' %>
+  </div>
+  <div>
+    <%= f.radio_button :is_active, false, cheched:@customer.is_active == false, id: 'status-deleted' %>
+    <%= f.label :is_active, '退会済み', for: 'status-deleted' %>
+  </div></p>
+
+  <%= f.submit "変更を保存", class:"btn btn-success" %>
 <% end %>
