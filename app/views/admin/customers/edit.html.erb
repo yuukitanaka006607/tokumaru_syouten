@@ -1,0 +1,10 @@
+<h1>会員情報編集</h1>
+<%= form_with model: @customer, url:  admin_customer_path do |f| %>
+<p><%= @customer.full_name %>さんの会員情報編集</p>
+<p>会員ID <%= @customer.id %></p>
+<div class="input-group m-3">
+    氏名  <%= f.text_field :last_name, autofocus: true, id:"inputLastName" %>
+          <%= f.text_field :first_name, autofocus: true, id:"inputFirstName"%>
+ </div>
+ 
+<% end %>

@@ -14,4 +14,5 @@
 <% elsif %>
  <p class="text-meted">退会</p>
 <% end %></p>
-<p>最終ログイン <%= @customer.current_sign_in_at %></p>
+<p>最終ログイン <%= @customer.last_login_at %></p>
+<%= link_to "編集する", edit_admin_customer_path, class:"btn btn-primary" %>

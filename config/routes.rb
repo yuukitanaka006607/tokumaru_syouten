@@ -23,7 +23,7 @@ end
     get "/" => "homes#top"
     get "items" => "items#index"
     resources :items, only: [:new, :show,:create, :edit, :update]
-    resources :customers, only: [:index, :show]
+    resources :customers, only: [:index, :show, :edit, :update]
   end
 
 end
