@@ -4,3 +4,9 @@
 <%= @item.genre.name %><br>
 <%= @item.introduction %>
 <p><%= @item.with_tax_price %>円(税込)</p>
+<p>数量を選択してください</p>
+<%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
+  <%= f.hidden_field :item_id, :value => @item.id %>
+  <%= f.select :amount, *[1..10] %>
+  <%= f.submit "カートへ入れる", class:"btn btn-primary" %>
+<% end %>

@@ -15,6 +15,7 @@ scope module: :public do
   get "customers/check" => "customers#check"
   patch "customers/withdrawal" => "customers#withdrawal"
   resources :items, only: [:show]
+  resources :cart_items, only: [:index, :create]
 end
 
   namespace :admin do
