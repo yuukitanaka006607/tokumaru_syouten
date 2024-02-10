@@ -15,8 +15,11 @@ scope module: :public do
   get "customers/check" => "customers#check"
   patch "customers/withdrawal" => "customers#withdrawal"
   resources :items, only: [:show]
-  resources :cart_items, only: [:index, :create]
-end
+  resources :cart_items, only: [:index, :create, :update, :destroy] do
+    collection do
+      delete 'destroy_all'
+    end
+  end
 
   namespace :admin do
     get "genres" => "genres#index"
@@ -26,6 +29,6 @@ end
     resources :items, only: [:new, :show,:create, :edit, :update]
     resources :customers, only: [:index, :show, :edit, :update]
   end
-
+ end
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
