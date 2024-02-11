@@ -20,6 +20,7 @@ scope module: :public do
       delete 'destroy_all'
     end
   end
+ end
 
   namespace :admin do
     get "genres" => "genres#index"
@@ -27,8 +28,8 @@ scope module: :public do
     get "/" => "homes#top"
     get "items" => "items#index"
     resources :items, only: [:new, :show,:create, :edit, :update]
+    get "customers/safety" => "customers#safety"
     resources :customers, only: [:index, :show, :edit, :update]
   end
- end
-end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+end

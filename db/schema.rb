@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2024_02_02_150530) do
     t.string "address", null: false
     t.string "telephone_number", null: false
     t.boolean "is_active", default: true, null: false
+    t.datetime "last_login_at"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -112,9 +113,10 @@ ActiveRecord::Schema.define(version: 2024_02_02_150530) do
     t.string "postal_code", null: false
     t.string "address", null: false
     t.string "name", null: false
-    t.integer "payment_method", null: false
+    t.integer "payment_method", default: 0, null: false
     t.integer "postage", null: false
     t.integer "billing_amount", null: false
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

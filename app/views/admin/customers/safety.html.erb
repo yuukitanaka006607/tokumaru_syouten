@@ -1,0 +1,7 @@
+<h1>安否確認リスト</h1>
+
+<% @customers.each do |customer|%>
+  <%= customer.full_name %>
+  <%= customer.last_login_at %>
+
+<% end %>
