@@ -20,6 +20,9 @@ scope module: :public do
       delete 'destroy_all'
     end
   end
+  post "orders/confirm" => "orders#confirm"
+  get "orders/complete" => "orders#complete"
+  resources :orders, only: [:new, :create, :index, :show]
  end
 
   namespace :admin do
