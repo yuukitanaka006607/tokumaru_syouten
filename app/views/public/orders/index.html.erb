@@ -1,0 +1,28 @@
+<h1>注文履歴一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>注文日</th>
+      <th>お届け先住所</th>
+      <th>注文点数</th>
+      <th>請求金額</th>
+      <th>配送状況</th>
+      <th>注文詳細</th>
+    </tr>
+  </thead>
+   <% @orders.each do |order| %>
+  <tbody>
+    <tr>
+      <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= order.postal_code %><br>
+          <%= order.address %><br>
+          <%= order.name %>
+      </td>
+      <td><%= order.order_items.sum(:amount) %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

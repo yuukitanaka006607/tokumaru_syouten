@@ -16,26 +16,28 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    cart_items = current_customer.cart_items.all
+    @order = Order.new(order_params)
     @order.postage = 500
+    @order.customer = current_customer
     @order.save
+    cart_items = current_customer.cart_items.all
     cart_items.each do |cart|
       OrderItem.create(order_id: @order.id, item_id: cart.item_id, price: cart.item.with_tax_price, amount: cart.amount)
+    end
+    cart_items.destroy_all
+    redirect_to orders_complete_path
   end
-  cart_items.destroy.all
-  redirect_to orders_complete_path
- end
 
  def complete
  end
 
  def index
-   @orders = current_customer.orders
+   @orders = Order.all
  end
 
  private
 
  def order_params
-   params.require(:order).permit(:address, :postal_code, :address, :name, :paymant_method, :billing_amount)
+   params.require(:order).permit(:address, :postal_code, :address, :name, :payment_method, :billing_amount)
  end
 end
