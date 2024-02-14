@@ -19,9 +19,9 @@
           <%= order.name %>
       </td>
       <td><%= order.order_items.sum(:amount) %></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><%= order.billing_amount %></td>
+      <td>未発送</td>
+      <td><%= link_to "詳細", order_path(order.id), class:"btn btn-success" %></td>
     </tr>
   </tbody>
   <% end %>
