@@ -1,1 +1,23 @@
-<h1>admin/homes/top</h1>
+<h1>注文履歴一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>注文日時</th>
+      <th>注文者</th>
+      <th>注文点数</th>
+      <th>請求金額</th>
+      <th>配送状況</th>
+    </tr>
+  </thead>
+  <% @orders.each do |order| %>
+  <tbody>
+    <tr>
+      <td><%= link_to order.created_at.strftime('%Y/%m/%d'), admin_order_path(order.id) %></td>
+      <td><%= order.name %></td>
+      <td><%= order.order_items.sum(:amount) %></td>
+      <td><%= order.billing_amount %></td>
+      <td>未発送</td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

@@ -33,6 +33,7 @@ scope module: :public do
     resources :items, only: [:new, :show,:create, :edit, :update]
     get "customers/safety" => "customers#safety"
     resources :customers, only: [:index, :show, :edit, :update]
+    resources :orders, only: [:show, :edit, :update]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
