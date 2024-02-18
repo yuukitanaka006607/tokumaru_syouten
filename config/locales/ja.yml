@@ -4,6 +4,10 @@ ja:
       payment_method:
         cash: "代金引換"
         credit_card: "クレジットカード"
+      status:
+        started_yet: "未発送"
+        shipping: "配送中"
+        complete: "配送完了"
   activerecord:
     errors:
       messages:
@@ -21,7 +25,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -47,7 +51,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
