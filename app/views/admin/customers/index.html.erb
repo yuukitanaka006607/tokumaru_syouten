@@ -1,23 +1,27 @@
-<h1>会員一覧</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>会員ID</th>
-        <th>氏名</th>
-        <th>住所</th>
-        <th>状況</th>
-      </tr>
-    </thead>
-    <% @customers.each do |customer| %>
-    <tr>
-      <td><%= customer.id %></td>
-      <td><%= link_to customer.full_name, admin_customer_path(customer.id) %></td>
-      <td><%= customer.address %></td>
-      <% if customer.is_active %>
-        <td><p class="text-success">有効</p></td>
-      <% elsif %>
-        <td><p class="text-meted">退会</p></td>
-      <% end %>
-    </tr>
-    <% end %>
-  </table>
+<section class="containar d-flex justify-content-center p-3">
+  <div class="p-3">
+    <h1 class="p-3">会員一覧</h1>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>会員ID</th>
+            <th>氏名</th>
+            <th>住所</th>
+            <th>状況</th>
+          </tr>
+        </thead>
+        <% @customers.each do |customer| %>
+        <tr>
+          <td><%= customer.id %></td>
+          <td><%= link_to customer.full_name, admin_customer_path(customer.id) %></td>
+          <td><%= customer.address %></td>
+          <% if customer.is_active %>
+            <td><p class="text-success">有効</p></td>
+          <% elsif %>
+            <td><p class="text-meted">退会</p></td>
+          <% end %>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </section>
