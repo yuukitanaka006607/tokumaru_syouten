@@ -4,7 +4,7 @@ class Admin::CustomersController < ApplicationController
    def index
      @customers = Customer.all
    end
-
+   
    def safety
      @customers = Customer.where('last_login_at < ?', 3.days.ago)
    end
