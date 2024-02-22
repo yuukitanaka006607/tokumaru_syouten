@@ -1,36 +1,55 @@
-<h1>注文詳細</h1>
-<p>注文者 <%= @order.name %></p>
-<p>注文日 <%= @order.created_at.strftime('%Y/%m/%d') %></p>
-<p>配送先 〒<%= @order.postal_code %> <%= @order.address %></p>
-<p>支払方法 <%= @order.payment_method_i18n %></p>
-<%= form_with model: @order, url: admin_order_path(@order) do |f| %>
-  <p>配送状況 <%= f.select(:status, Order.status_options, {}, class: 'form-control') %>
-              <%= f.submit "更新", class:"btn btn-primary" %>
-<% end %>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>商品名</th>
-      <th>単価（税込）</th>
-      <th>数量</th>
-      <th>小計</th>
-    </tr>
-  </thead>
-    <tbody>
-      <% @order_items.each  do |order_item| %>
-        <tr>
-          <td><%= order_item.item.name %></td>
-          <td><%= order_item.price %></td>
-          <td><%= order_item.amount %></td>
-          <td><%= order_item.price*order_item.amount %></td>
-        </tr>
-    </tbody>
-    <% @sum += order_item.price*order_item.amount %>
+<section class="containar d-flex justify-content-center p-3">
+  <div class="col-4">
+    <h1>注文詳細</h1>
+    <p><注文者> <%= @order.name %></p>
+    <p><注文日> <%= @order.created_at.strftime('%Y/%m/%d') %></p>
+    <p><配送先> 〒<%= @order.postal_code %> <%= @order.address %></p>
+    <p><支払方法> <%= @order.payment_method_i18n %></p>
+    <%= form_with model: @order, url: admin_order_path(@order) do |f| %>
+      <p><配送状況> <%= f.select(:status, Order.status_options, {}, class: 'form-control') %>
+                  <%= f.submit "更新", class:"btn btn-primary m-3" %>
     <% end %>
-</table>
-
-<p>商品合計 <%= @sum %></p>
-<p>配送料 <%= @order.postage %></p>
-<p>請求金額 <%= @sum+@order.postage %></p>
+    </p>
+  </div>
+  <div class="col-4 mt-5">
+    <table class="table taavle-inverse">
+    　<thead>
+        <tr>
+          <th>商品名</th>
+          <th>単価（税込）</th>
+          <th>数量</th>
+          <th>小計</th>
+        </tr>
+   　  </thead>
+      <tbody>
+        <% @order_items.each  do |order_item| %>
+          <tr>
+            <td><%= order_item.item.name %></td>
+            <td><%= order_item.price %></td>
+            <td><%= order_item.amount %></td>
+            <td><%= order_item.price*order_item.amount %></td>
+          </tr>
+      </tbody>
+      <% @sum += order_item.price*order_item.amount %>
+      <% end %>
+  　</table>
+  　
+    <table class="table table-bordered">
+      
+      <tbody>
+        <tr>
+          <td>商品合計</td>
+          <td><%= @sum %>円</td>
+        </tr>
+        <tr>
+          <td>配送料</td>
+          <td><%= @order.postage %>円</td>
+        </tr>
+        <tr>
+          <td>請求金額</td>
+          <td><%= @sum+@order.postage %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
