@@ -1,6 +1,7 @@
-<div class="containar d-flex justify-content-start p-5">
+<div class="containar d-flex justify-content-center p-5">
+  <div class="col-5">
   <%= form_with model: @customer, url: customers_information_path do |f| %>
-  <p>会員情報編集</p>
+  <h3>会員情報編集</h3>
   <div class="input-group m-3">
       <p>氏名</p>
       <%= f.text_field :last_name, autoforcus: true, id:"inputLastName", class:"form-control m-3" %>
@@ -38,7 +39,8 @@
       <p>メールアドレス</p>
       <%= f.email_field :email, autofocus: true, id:"inputEmail", class:"form-control" %>
     </div>
-    <%= f.submit "変更内容を保存", class:"btn btn-success" %>
-    <%= link_to "退会する", customers_check_path, class:"btn btn-danger" %>
+    <%= f.submit "変更内容を保存", class:"btn btn-success mt-5" %>
+    <%= link_to "退会する", customers_check_path, class:"btn btn-danger mt-5" %>
   <% end %>
+  </div>
 </div>
