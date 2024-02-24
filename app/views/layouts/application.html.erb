@@ -25,6 +25,9 @@
             <ul class="navbar-nav ml-auto">
               <% if customer_signed_in? %>
               <p class="mr-5">ようこそ<%= current_customer.full_name %>様 ! </p>
+              <li class="nav_item">
+                <%= link_to "サービス案内", homes_about_path, class:"btn btn-info m-1" %>
+              </li>
               <li class="nav-item">
                 <%= link_to "商品一覧", root_path, class:"btn btn-info m-1" %>
               </li>
@@ -61,6 +64,9 @@
                 <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn btn-info m-1" %>
               </li>
               <% else %>
+              <li class="nav_item">
+                <%= link_to "サービス案内", homes_about_path, class:"btn btn-info m-1" %>
+              </li>
               <li class="nav-item">
                 <%= link_to "商品一覧", root_path, class:"btn btn-info m-1" %>
               </li>

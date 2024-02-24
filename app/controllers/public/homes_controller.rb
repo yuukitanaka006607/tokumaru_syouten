@@ -7,9 +7,9 @@ class Public::HomesController < ApplicationController
     
     if genre_id.present? #ジャンルIDが存在するとき
       genre = Genre.find(genre_id)
-      @items = genre.items
+      @items = genre.items.page(params[:page])
     else #ジャンルIDが存在しない時
-      @items = Item.all
+      @items = Item.page(params[:page])
     end
         
   end

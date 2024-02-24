@@ -8,6 +8,7 @@ devise_for :admin, skip: [:registrations, :passwords], controllers: {
 }
 
 root to: "public/homes#top"
+  get "homes/about" => "public/homes#about"
 scope module: :public do
   get "customers/my_page" => "customers#show"
   get "customers/information/edit" => "customers#edit"
