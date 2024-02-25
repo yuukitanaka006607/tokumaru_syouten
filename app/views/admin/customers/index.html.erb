@@ -18,10 +18,12 @@
           <% if customer.is_active %>
             <td><p class="text-success">有効</p></td>
           <% elsif %>
-            <td><p class="text-meted">退会</p></td>
+            <td><p class="text-danger">退会</p></td>
           <% end %>
         </tr>
         <% end %>
       </table>
+      <%= link_to_prev_page @customers, '前へ',class:"btn btn-primary" %>
+      <%= link_to_next_page @customers, '次へ',class:"btn btn-primary" %>
     </div>
   </section>

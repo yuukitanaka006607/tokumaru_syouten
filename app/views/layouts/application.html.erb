@@ -14,9 +14,15 @@
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg navbar-right" style="background-color: #e3f2fd;">
-        <div class="container">
-          <strong class="navbar-brand p-3"><%= link_to "トクマル商店", (admin_signed_in? ? admin_path : root_path ), class: "logo" %></strong>
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        
+          <a class="navbar-brand p-3">
+            <%= link_to (admin_signed_in? ? admin_path : root_path ), class: "logo" do %>
+            <div>
+              <%= image_tag "tokumaru.jpg", :size =>'150x150' %>
+            </div>
+            <% end %>
+          </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,7 +30,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if customer_signed_in? %>
-              <p class="mr-5">ようこそ<%= current_customer.full_name %>様 ! </p>
+              <p class="mr-5">ようこそ<%= current_customer.full_name %>様 <strong class="text-danger">!</strong></p>
               <li class="nav_item">
                 <%= link_to "サービス案内", homes_about_path, class:"btn btn-info m-1" %>
               </li>
@@ -44,7 +50,7 @@
                 <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"btn btn-info m-1" %>
               </li>
               <% elsif admin_signed_in? %>
-              <p class="mr-5">ようこそ管理者様 ! </p>
+              <p class="mr-5">ようこそ管理者様 <strong class="text-danger">!</strong></p>
               <li class="nav-item">
                 <%= link_to "商品一覧", admin_items_path, class:"btn btn-info m-1" %>
               </li>
@@ -79,11 +85,17 @@
               <% end %>
             </ul>
           </div>
-        </div>
       </nav>
     </header>
    <main class="mb-auto">
     <%= yield %>
    </main>
+   <footer class="pt-5 pb-4"style="background-color: #e3f2fd;">
+     <div class="row justify-content-start pl-5">
+        <h6 class="mt-2 mb-3">営業時間　9:00　～　20：00<br>
+                              問い合わせ　06-2266-0000<br>
+                              Copyright © tokumarusyouten. All Rights Reserved.</h6>
+     </div>
+   </footer>
   </body>
 </html>

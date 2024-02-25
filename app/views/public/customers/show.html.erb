@@ -1,7 +1,6 @@
 <section class="containar d-flex justify-content-center p-3">
   <div class="col-5">
-    <h1 class="m-3">マイページ</h1>
-    <h3>登録情報</h3>
+    <h1 class="m-3">マイページ　(登録情報確認)  <%= link_to "編集する", customers_information_edit_path,class:"btn btn-success m-5" %></h1>
     <p><氏名> <%= @customer.last_name %> <%= @customer.first_name %></p>
     <p><フリガナ> <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></p>
     <p><生年月日> <%= @customer.birthday.strftime('%Y年%m月%d日') %></p>
@@ -10,6 +9,5 @@
     <p><住所> <%= @customer.address %></p>
     <p><電話番号> <%= @customer.telephone_number %></p>
     <p><メールアドレス> <%= @customer.email %></p>
-    <%= link_to "編集する", customers_information_edit_path,class:"btn btn-success" %>
   </div>
 </section>

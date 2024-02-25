@@ -32,7 +32,7 @@ class Public::OrdersController < ApplicationController
  end
 
  def index
-   @orders = current_customer.orders
+   @orders = current_customer.orders.page(params[:page])
  end
 
  def show
@@ -41,7 +41,7 @@ class Public::OrdersController < ApplicationController
    @sum = 0
    @order.postage = 500
  end
- 
+
  private
 
  def order_params
