@@ -20,10 +20,10 @@
               <%= order.address %><br>
               <%= order.name %>
           </td>
-          <td><%= order.order_items.sum(:amount) %></td>
-          <td><%= order.billing_amount %></td>
+          <td><%= order.order_items.sum(:amount) %>点</td>
+          <td><%= order.billing_amount %>円</td>
           <td><%= order.status_i18n %></td>
-          <td><%= link_to "詳細", order_path(order.id), class:"btn btn-success" %></td>
+          <td><%= link_to "詳細", order_path(order.id), class:"btn btn-success shadow" %></td>
         </tr>
       </tbody>
       <% end %>

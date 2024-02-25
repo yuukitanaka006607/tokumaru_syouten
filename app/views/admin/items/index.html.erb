@@ -1,6 +1,6 @@
 <section class="containar d-flex justify-content-center p-3">
   <div class=" col-9 p-3">
-    <h1 class="p-3">商品一覧  <%= link_to "商品新規登録", new_admin_item_path, class:"btn btn-success" %></h1>
+    <h1 class="p-3">商品一覧  <%= link_to "商品新規登録", new_admin_item_path, class:"btn btn-success shadow ml-5" %></h1>
     <table class="table table-hover table-inverse">
       <thead>
         <tr>
@@ -19,7 +19,7 @@
       </tr>
       <% end %>
     </table>
-    <%= link_to_prev_page @items, '前へ',class:"btn btn-primary" %>
-    <%= link_to_next_page @items, '次へ',class:"btn btn-primary" %>
+    <%= link_to_prev_page @items, '前へ',class:"btn btn-primary shadow" %>
+    <%= link_to_next_page @items, '次へ',class:"btn btn-primary shadow" %>
   </div>
 </section>

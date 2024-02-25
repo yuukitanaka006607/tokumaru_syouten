@@ -15,7 +15,7 @@
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-        
+
           <a class="navbar-brand p-3">
             <%= link_to (admin_signed_in? ? admin_path : root_path ), class: "logo" do %>
             <div>
@@ -32,55 +32,56 @@
               <% if customer_signed_in? %>
               <p class="mr-5">ようこそ<%= current_customer.full_name %>様 <strong class="text-danger">!</strong></p>
               <li class="nav_item">
-                <%= link_to "サービス案内", homes_about_path, class:"btn btn-info m-1" %>
+                <%= link_to "サービス案内", homes_about_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "商品一覧", root_path, class:"btn btn-info m-1" %>
+                <%= link_to "商品一覧", root_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav_item">
-                <%= link_to "注文一覧", orders_path, class:"btn btn-info m-1" %>
+                <%= link_to "注文一覧", orders_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "マイページ", customers_my_page_path, class:"btn btn-info m-1" %>
+                <%= link_to "マイページ", customers_my_page_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nab-item">
-                <%= link_to "カート", cart_items_path, class:"btn btn-info m-1" %>
+                <%= link_to "カート", cart_items_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"btn btn-info m-1" %>
+                <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"btn btn-danger shadow m-1" %>
               </li>
               <% elsif admin_signed_in? %>
               <p class="mr-5">ようこそ管理者様 <strong class="text-danger">!</strong></p>
               <li class="nav-item">
-                <%= link_to "商品一覧", admin_items_path, class:"btn btn-info m-1" %>
+                <%= link_to "商品一覧", admin_items_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "会員一覧", admin_customers_path, class:"btn btn-info m-1" %>
+                <%= link_to "会員一覧", admin_customers_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "注文一覧", admin_path, class:"btn btn-info m-1" %>
+                <%= link_to "注文一覧", admin_path, class:"btn btn-info shadow m-1" %>
                </li>
               <li class="nav-item">
-                <%= link_to "安否確認", admin_customers_safety_path, class:"btn btn-info m-1" %>
+                <%= link_to "安否確認", admin_customers_safety_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "ジャンル一覧", admin_genres_path, class:"btn btn-info m-1" %>
+                <%= link_to "ジャンル一覧", admin_genres_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn btn-info m-1" %>
+                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"btn btn-danger m-1" %>
               </li>
               <% else %>
+              <p class="border-bottom border-danger mr-5"><strong>会員未登録の方は、 [新規登録] から登録へ進めます。</strong></p>
               <li class="nav_item">
-                <%= link_to "サービス案内", homes_about_path, class:"btn btn-info m-1" %>
+                <%= link_to "サービス案内", homes_about_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "商品一覧", root_path, class:"btn btn-info m-1" %>
+                <%= link_to "商品一覧", root_path, class:"btn btn-info shadow m-1" %>
               </li>
               <li class="nav-item">
-                <%= link_to "新規登録", new_customer_registration_path, class:"btn btn-info m-1" %>
+                <%= link_to "新規登録", new_customer_registration_path, class:"btn btn-info shadow m-1" %>
                </li>
               <li class="nav-item">
-                <%= link_to "ログイン", new_customer_session_path, class:"btn btn-info m-1" %>
+                <%= link_to "ログイン", new_customer_session_path, class:"btn btn-success shadow m-1" %>
               </li>
               <% end %>
             </ul>

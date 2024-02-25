@@ -1,14 +1,14 @@
 <section class="containar d-flex justify-content-center">
- <div class="row border border-5 m-5">
+ <div class="row border border-5 shadow m-5">
   <div class="col-md-4 p-5">
-    <%= image_tag @item.get_image(300,300) %>
+    <%= image_tag @item.get_image(200,200) %>
   </div>
   <div class="col-md-8 p-5">
     <h3><商品名> <%= @item.name %></h3>
     <p><ジャンル> <%= @item.genre.name %></p>
     <p><商品説明> <%= @item.introduction %></p>
     <p><税込価格（税抜価格）> <%= @item.with_tax_price %> (<%= @item.price.floor %>円)</p>
-    <%= link_to "編集する", edit_admin_item_path(@item.id), class:"btn btn-primary" %>
+    <%= link_to "編集する", edit_admin_item_path(@item.id), class:"btn btn-success shadow" %>
   </div>
  </div>
 </section>

@@ -1,13 +1,13 @@
 <section class="containar d-flex justify-content-center p-3">
   <div class="col-4">
-    <h1>注文詳細</h1>
-    <p><注文者> <%= @order.name %></p>
+    <h1 class="border-bottom border-info">注文詳細</h1>
+    <p class="pt-3"><注文者> <%= @order.name %></p>
     <p><注文日> <%= @order.created_at.strftime('%Y/%m/%d') %></p>
     <p><配送先> 〒<%= @order.postal_code %> <%= @order.address %></p>
     <p><支払方法> <%= @order.payment_method_i18n %></p>
     <%= form_with model: @order, url: admin_order_path(@order) do |f| %>
       <p><配送状況> <%= f.select(:status, Order.status_options, {}, class: 'form-control') %>
-                  <%= f.submit "更新", class:"btn btn-primary m-3" %>
+                  <%= f.submit "更新", class:"btn btn-success shadow m-3" %>
     <% end %>
     </p>
   </div>
@@ -33,9 +33,9 @@
       <% @sum += order_item.price*order_item.amount %>
       <% end %>
   　</table>
-  　
+
     <table class="table table-bordered">
-      
+
       <tbody>
         <tr>
           <td>商品合計</td>

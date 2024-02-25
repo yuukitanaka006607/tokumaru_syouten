@@ -1,9 +1,8 @@
 <section class="containar d-flex justify-content-center p-3">
-  <div class="col-5 p-3">
-    <h1 class="p-3">会員情報編集</h1>
+  <div class="col-5  border border-5 shadow p-5">
     <%= form_with model: @customer, url:  admin_customer_path do |f| %>
-    <h4><%= @customer.full_name %>さんの会員情報編集</h4>
-    <p><会員ID> <%= @customer.id %></p>
+    <h1 class="border-bottom border-info"><%= @customer.full_name %> さんの会員情報編集</h1>
+    <p class="pt-3"><会員ID> <%= @customer.id %></p>
     <div class="input-group m-3">
         <氏名>  <%= f.text_field :last_name, autofocus: true, id:"inputLastName",class:"form-control m-3" %>
               <%= f.text_field :first_name, autofocus: true, id:"inputFirstName",class:"form-control m-3"%>
@@ -13,7 +12,7 @@
                 <%= f.text_field :first_name_kana, autofocus:true, id:"inputFirstNameKana",class:"form-control m-3" %>
      </div>
      <p><生年月日> <%= f.date_select :birthday, {start_year:1950, end_year:2020,
-                  include_blank: true, use_two_digit_numbers: true},class:"btn btn-secondary" %></p>
+                  include_blank: true, use_two_digit_numbers: true},class:"btn btn-outline-dark" %></p>
 
       <p><郵便番号> <%= f.text_field :postal_code, autofocus: true, id:"inputPostalCode",class:"form-control m-3" %></p>
 
@@ -32,7 +31,7 @@
         <%= f.label :is_active, '退会済み', for: 'status-deleted' %>
       </div></p>
 
-      <%= f.submit "変更を保存", class:"btn btn-success" %>
+      <%= f.submit "変更を保存", class:"btn btn-success shadow" %>
     <% end %>
   </div>
 </section>

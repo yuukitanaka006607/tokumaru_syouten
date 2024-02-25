@@ -1,6 +1,6 @@
 <section class="containar d-flex justify-content-center p-3">
- <div class="col-5">
-  <h1 class="mb-5"><%= @customer.full_name %>様の会員詳細</h1>
+ <div class="col-5 border border-5 shadow p-5">
+  <h1 class="border-bottom border-info mb-5"><%= @customer.full_name %> さんの会員詳細</h1>
   <p><会員ID> <%= @customer.id %></p>
   <p><会員氏名> <%= @customer.last_name %> <%= @customer.first_name %></p>
   <p><フリガナ> <%= @customer.last_name_kana %> <%= @customer.first_name_kana %></p>
@@ -17,6 +17,6 @@
    <p class="text-danger">退会</p>
   <% end %></p>
   <p><最終ログイン日> <%= @customer.current_sign_in_at.strftime('%Y年%m月%d日') %></p>
-  <%= link_to "編集する", edit_admin_customer_path, class:"btn btn-primary" %>
+  <%= link_to "編集する", edit_admin_customer_path, class:"btn btn-primary shadow" %>
  </div>
 </section>

@@ -1,6 +1,6 @@
 <section class="containar d-flex justify-content-center p-3">
   <div class="col-4 p-5">
-    <h1>ジャンル新規追加</h1>
+    <h1 class="border-bottom border-info">ジャンル新規追加</h1>
     <%= form_with model: @genre, url: admin_genres_path, local:true do |f| %>
       <p>ジャンル名</p>
       <%= f.text_field :name %>

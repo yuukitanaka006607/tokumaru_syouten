@@ -1,7 +1,7 @@
 <div class="containar d-flex justify-content-center p-3">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <h2 class="section-ttl">ログイン</h2>
-    <div class="field">
+  <h2 class="border-bottom border-info pt-3">会員ログイン</h2>
+    <div class="field pt-3">
       <%= f.label :"メールアドレス", class:"form-label" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control m-3" %>
     </div>
@@ -12,8 +12,8 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "ログイン", class:"btn btn-primary m-5" %>
-      <%= link_to "ゲストログイン", customers_guest_sign_in_path, class:"btn btn-success m-5" %>
+      <%= f.submit "ログイン", class:"btn btn-primary shadow m-5" %>
+      <%= link_to "ゲストログイン", customers_guest_sign_in_path, class:"btn btn-success shadow m-5" %>
     </div>
   <% end %>
 </div>

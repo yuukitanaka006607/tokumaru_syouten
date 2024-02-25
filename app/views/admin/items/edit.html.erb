@@ -1,14 +1,14 @@
 <section class="containar d-flex justify-content-center p-3">
-  <div class="">
-    <h1 class="mb-3">商品編集</h1>
+  <div class="col-5 border border-5 shadow p-5">
+    <h1 class="border-bottom border-info mb-3">商品編集</h1>
     <%= form_with model: @item, url:admin_item_path(@item.id), method: :patch do |f| %>
-    <p>商品画像 <%= f.file_field :image, accept: "image/*" %></p>
-    <p>商品名 <%= f.text_field :name, autofocus: true, id:"inputName",class:"form-control m-3" %></p>
-    <p>ジャンル <%= f.collection_select :genre_id, Genre.all, :id, :name, id:"inputGenre" %></p>
-    <p>商品説明 <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction",class:"form-control m-3" %></p>
-    <p>税抜価格 <%= f.number_field :price,autofocus: true, id:"inputPrice",class:"form-control m-3" %></p>
+    <p><商品画像> <%= f.file_field :image, accept: "image/*" %></p>
+    <p><商品名> <%= f.text_field :name, autofocus: true, id:"inputName",class:"form-control m-3" %></p>
+    <p><ジャンル> <%= f.collection_select :genre_id, Genre.all, :id, :name, id:"inputGenre" %></p>
+    <p><商品説明> <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction",class:"form-control m-3" %></p>
+    <p><税抜価格> <%= f.number_field :price,autofocus: true, id:"inputPrice",class:"form-control m-3" %></p>
 
-    <%= f.submit "変更を保存", class:"btn btn-primary" %>
+    <%= f.submit "変更を保存", class:"btn btn-success shadow" %>
     <% end %>
   </div>
 </section>

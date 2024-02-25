@@ -1,25 +1,25 @@
 <section class="wrapper flex">
   <div class="row">
-    <div class="col-2 border border-5 m-5" style="background-color: #dddddd;">
-      <h3 class="m-5">ジャンル検索</h3>
+    <div class="col-2 shadow m-5" style="background-color: #e3f2fd;">
+      <h3 class="border-bottom border-info m-5"><strong>ジャンル検索</strong></h3>
       <% @genres.each do |genre| %>
-        <p class="m-3"><%= link_to genre.name, root_path(genre_id: genre.id),class:"btn btn-primary btn-lg" %><br></p>
+        <p class="m-3"><%= link_to genre.name, root_path(genre_id: genre.id),class:"btn btn-info btn-lg shadow" %><br></p>
       <% end %>
     </div>
     <div class="col-8 text-center">
-      <h1 class="p-3">商品一覧 全<%= @items.count %>件</h1>
+      <h1 class="border-bottom border-info p-3">商品一覧 <%= @items.count %>件</h1>
       <div class="row">
        <% @items.each do |item| %>
        <div class="col-md-3 p-5">
-      <%= image_tag item.get_image(200,200) %><br>
+      <%= image_tag item.get_image(200,200),class:"shadow m-2" %><br>
       <%= link_to item.name, item_path(item.id) %><br>
       <%= item.genre.name %>
       <p><%= item.with_tax_price %>円</p>
       </div>
       <% end %>
       </div>
-      <%= link_to_prev_page @items, '前へ',class:"btn btn-primary" %>
-      <%= link_to_next_page @items, '次へ',class:"btn btn-primary" %>
+      <%= link_to_prev_page @items, '前へ',class:"btn btn-primary shadow mb-3" %>
+      <%= link_to_next_page @items, '次へ',class:"btn btn-primary shadow mb-3" %>
     </div>
   </div>
 </section>
