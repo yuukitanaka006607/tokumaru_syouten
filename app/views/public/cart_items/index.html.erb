@@ -1,7 +1,7 @@
 <div class="containar d-flex justify-content-center p-5">
   <div class="col-9">
 
-    <h1>ショッピングカート <%= link_to "カートを空にする",destroy_all_cart_items_path, method: :delete, class:"btn btn-danger shadow" %></h1>
+    <h1>ショッピングカート <%= link_to "カートを空にする",destroy_all_cart_items_path, method: :delete, class:"btn btn-danger shadow ml-5 mb-2" %></h1>
     <table class="table table-inverse">
       <thead>
         <tr>
@@ -15,15 +15,15 @@
       <tbody>
         <% @cart_items.each do |cart_item| %>
         <tr>
-          <td><%= image_tag cart_item.item.get_image(100,100) %>
-              <%= cart_item.item.name %></td>
-          <td><%= cart_item.item.with_tax_price %>円</td>
+          <td><%= image_tag cart_item.item.get_image(100,100),class:"shadow mr-5" %>
+              <%= cart_item.item.name%></td>
+          <td><%= cart_item.item.with_tax_price %> 円</td>
           <td><%= form_with model: cart_item, url:cart_item_path(cart_item.id) do |f| %>
-                <%= f.select :amount, *[1..10] %>
-                <%= submit_tag "変更", class:"btn btn-success shadow" %>
+                <%= f.select :amount, *[1..10] %> 点
+                <%= submit_tag "変更", class:"btn btn-success shadow ml-5" %>
               <% end %>
           </td>
-          <td><%= cart_item.subtotal %></td>
+          <td><%= cart_item.subtotal %> 円</td>
           <td><%= link_to "削除", cart_item_path(cart_item), method: :delete, class:"btn btn-danger shadow" %></td>
           <% @sum += cart_item.subtotal %>
         </tr>
@@ -34,6 +34,6 @@
     <% if @cart_items.any? %>
       <%= link_to "情報入力へ進む", new_order_path, class:"btn btn-success shadow" %>
     <% end %>
-    <h3>合計金額 <%= @sum %></h3>
+    <h3>[合計金額] <%= @sum %>　円　</h3>
   </div>
 </div>

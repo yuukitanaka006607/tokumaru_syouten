@@ -1,20 +1,19 @@
 <section class="containar d-flex justify-content-center">
   <div class="row border border-5 shadow m-5">
-    <div class="col-md-4 p-4 ">
-      <h2>商品詳細</h2>
-     <%= image_tag @item.get_image(200,200) %><br>
+    <div class="col-md-4 p-5 ">
+     <%= image_tag @item.get_image(200,200),class:"shadow" %><br>
     </div>
-    <div class="col-md-8 p-5 mt-5">
-      <%= @item.name %><br>
-      <%= @item.genre.name %><br>
-      <%= @item.introduction %>
-      <p><%= @item.with_tax_price %>円(税込)</p>
+    <div class="col-md-8 p-5">
+      <h3 class="border-bottom border-info"><%= @item.name %><br></h3>
+      <p><ジャンル> <%= @item.genre.name %></p>
+      <p><価格> <%= @item.with_tax_price %>円(税込)</p>
+      <p><説明> <%= @item.introduction %></p>
       <% if customer_signed_in? %>
         <p>数量を選択してください</p>
         <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
           <%= f.hidden_field :item_id, :value => @item.id %>
-          <%= f.select :amount, *[1..10] %>
-          <%= f.submit "カートへ入れる", class:"btn btn-primary" %>
+          <%= f.select :amount, *[1..10] %> 点
+          <%= f.submit "カートへ入れる", class:"btn btn-primary shadow m-3" %>
         <% end %>
       <% end %>
     </div>
