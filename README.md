@@ -21,8 +21,10 @@
 - 一定期間購入のないユーザーへの安否確認を行う時
 ​
 ## 設計書
--詳細設定-https://docs.google.com/spreadsheets/d/1RsbL-CQAL4aHXilOCCs-fLFkqVe5AU0UKoZUkVbA3K4/edit#gid=0
--ER図-https://app.diagrams.net/#G10AsYXV5twRcYvUtxtRP_g9hrW9ii_hff#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
+-詳細設定 https://docs.google.com/spreadsheets/d/1RsbL-CQAL4aHXilOCCs-fLFkqVe5AU0UKoZUkVbA3K4/edit#gid=0
+-ER図 https://app.diagrams.net/#G10AsYXV5twRcYvUtxtRP_g9hrW9ii_hff#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
+-ワイヤーフレーム　https://app.diagrams.net/#G1EEhK3wVThbn8AViiCtyYMxlyMGw89c2W#%7B%22pageId%22%3A%229RwKuDDbfEzguHjtFngs%22%7D
+https://app.diagrams.net/#G1pcbqHZpXsP3XIfC-dAHVslS3YkF58OqD#%7B%22pageId%22%3A%2203018318-947c-dd8e-b7a3-06fadd420f32%22%7D
 
 ​
 ## 開発環境
