@@ -21,7 +21,9 @@
 - 一定期間購入のないユーザーへの安否確認を行う時
 ​
 ## 設計書
-後ほど作成予定
+-詳細設定-https://docs.google.com/spreadsheets/d/1RsbL-CQAL4aHXilOCCs-fLFkqVe5AU0UKoZUkVbA3K4/edit#gid=0
+-ER図-https://app.diagrams.net/#G10AsYXV5twRcYvUtxtRP_g9hrW9ii_hff#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
+
 ​
 ## 開発環境
 - OS：Linux(CentOS)
