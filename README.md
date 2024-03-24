@@ -25,6 +25,10 @@
 -ER図 https://app.diagrams.net/#G10AsYXV5twRcYvUtxtRP_g9hrW9ii_hff#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D
 -ワイヤーフレーム　https://app.diagrams.net/#G1EEhK3wVThbn8AViiCtyYMxlyMGw89c2W#%7B%22pageId%22%3A%229RwKuDDbfEzguHjtFngs%22%7D
 https://app.diagrams.net/#G1pcbqHZpXsP3XIfC-dAHVslS3YkF58OqD#%7B%22pageId%22%3A%2203018318-947c-dd8e-b7a3-06fadd420f32%22%7D
+-AWS設計書
+https://docs.google.com/spreadsheets/d/1bZcxu1GnLBDQEZLMKjaXlyENVyO6grECobC2wmwvsTk/edit#gid=0
+－AWS設計図
+https://app.diagrams.net/#G1Ev5gMliZhcmeF4lQt_CZblvEr0mfI-f2
 
 ​
 ## 開発環境
