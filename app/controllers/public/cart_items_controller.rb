@@ -11,6 +11,7 @@ class Public::CartItemsController < ApplicationController
        redirect_to cart_items_path
     else
       @cart_item.save
+      flash[:notice] = "カートに商品を追加しました。"
       redirect_to cart_items_path
     end
   end

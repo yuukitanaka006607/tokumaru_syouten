@@ -1,6 +1,6 @@
 <div class="containar d-flex justify-content-center p-5">
   <div class="col-9">
-
+    <h3 class="text-danger"><%= flash[:notice] %></h3>
     <h1>ショッピングカート <%= link_to "カートを空にする",destroy_all_cart_items_path, method: :delete, class:"btn btn-danger shadow ml-5 mb-2" %></h1>
     <table class="table table-inverse">
       <thead>
